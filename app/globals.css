@@ -43,3 +43,18 @@ body {
 .nav__btn-selected {
   @apply bg-white rounded-full transition-all;
 }
+
+.image-card {
+  @apply object-fill object-center rounded-lg  max-h-80 cursor-pointer;
+}
+
+.masking {
+  @apply w-full h-full bg-black absolute opacity-0 z-10;
+}
+
+.masking:hover + .image-card {
+  @apply blur-sm transition-all duration-500;
+}
+.masking:hover {
+  @apply opacity-50;
+}

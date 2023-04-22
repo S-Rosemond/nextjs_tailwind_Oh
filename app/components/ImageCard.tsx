@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type ImageCard = {
   image: string;
   brand: string;
@@ -6,11 +8,14 @@ type ImageCard = {
 
 function ImageCard({ image, brand, altText = "" }: ImageCard) {
   return (
-    <div className="aspect-h-2 aspect-w-1 rounded-lg container bg-black">
-      <img
+    <div className="aspect-h-2 aspect-w-1 rounded-lg transition-all container relative">
+      <div className="masking"></div>
+      <Image
         src={image}
         alt={altText}
-        className="object-cover object-center rounded-lg aspect-[1/2] hover:blur-sm"
+        height="427"
+        width="640"
+        className="image-card"
       />
     </div>
   );
