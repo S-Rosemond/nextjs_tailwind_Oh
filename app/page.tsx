@@ -3,6 +3,15 @@ import ImageCard from "./components/ImageCard";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const image = [
+  "/taylor-smith-Nike-unsplash.jpg",
+  "/ervan-new-balance-unsplash.jpg",
+  "/rachael-converse-unsplash.jpg",
+  "/mayur-reebok-unsplash.jpg",
+  "/the-puma-unsplash.jpg",
+  "/tom-fila-unsplash.jpg",
+];
+
 export default function Home() {
   return (
     <>
@@ -12,8 +21,13 @@ export default function Home() {
           Any brand and style shipped globally.
         </h1>
       </main>
-      <section>
-        <ImageCard image="/taylor-smith-Nike-unsplash.jpg" brand="none" />
+      <section className="grid md:grid-cols-2 gap-5">
+        <ImageCard image={image[0]} brand="none" />
+        <ImageCard image={image[1]} brand="none" />
+        <ImageCard image={image[2]} brand="none" />
+        <ImageCard image={image[3]} brand="none" />
+        <ImageCard image={image[4]} brand="none" />
+        <ImageCard image={image[5]} brand="none" />
       </section>
     </>
   );
