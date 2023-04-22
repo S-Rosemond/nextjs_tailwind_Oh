@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  @apply bg-white;
+}
+
+.wrapper {
+  @apply px-5;
+}
+
+.container {
+  @apply grid place-items-center min-h-full;
+}
+
+.header {
+  @apply p-5;
+}
+
+.nav {
+  @apply bg-gray-200 gap-5 flex justify-evenly min-w-[18.25rem] rounded-full p-3;
+}
+
+.nav__btn {
+  @apply py-1.5 px-5 transition-all duration-300;
+}
+
+.nav__btn-selected {
+  @apply bg-white rounded-full transition-all;
+}
