@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-function setSelectedNavElement(href: string) {
+function useSelectedNavElement(href: string) {
   const pathName = usePathname();
 
   return href === pathName ? "nav__btn-selected" : "";
@@ -11,20 +11,20 @@ function setSelectedNavElement(href: string) {
 function Navbar() {
   return (
     <>
-      <header className="container header mb-5">
+      <header className="custom-container header mb-5">
         <nav className="nav">
-          <Link href="/" className={`nav__btn ${setSelectedNavElement("/")}`}>
+          <Link href="/" className={`nav__btn ${useSelectedNavElement("/")}`}>
             Home
           </Link>
           <Link
             href="/shop"
-            className={`nav__btn ${setSelectedNavElement("/shop")}`}
+            className={`nav__btn ${useSelectedNavElement("/shop")}`}
           >
             Shop
           </Link>
           <Link
             href="/contact"
-            className={`nav__btn ${setSelectedNavElement("/contact")}`}
+            className={`nav__btn ${useSelectedNavElement("/contact")}`}
           >
             Contact
           </Link>
