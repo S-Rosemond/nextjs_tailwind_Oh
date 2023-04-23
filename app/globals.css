@@ -24,8 +24,8 @@ body {
   @apply px-5;
 }
 
-.container {
-  @apply grid place-items-center min-h-full;
+.custom-container {
+  @apply flex justify-center place-items-center;
 }
 
 .header {
@@ -33,7 +33,7 @@ body {
 }
 
 .nav {
-  @apply bg-gray-200 gap-5 flex justify-evenly min-w-[18.25rem] rounded-full p-3;
+  @apply bg-gray-200 gap-5 flex justify-evenly min-w-[18.25rem] rounded-full p-3 max-w-[22rem];
 }
 
 .nav__btn {
@@ -45,15 +45,20 @@ body {
 }
 
 .first-mask {
-  @apply rounded-lg transition-all container relative;
+  @apply rounded-lg transition-all container relative max-w-fit;
 }
 
 .image-card {
-  @apply object-fill object-center rounded-lg  max-h-80 cursor-pointer pointer-events-none;
+  @apply object-fill object-center rounded-lg cursor-pointer pointer-events-none min-w-[31.25rem];
 }
 
 .second-mask {
   @apply w-full h-full bg-black absolute opacity-0 z-10 rounded-lg cursor-pointer pointer-events-none;
+}
+
+.first-mask,
+.image-card {
+  @apply max-h-80;
 }
 
 .btn-up-right {

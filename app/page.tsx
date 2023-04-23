@@ -15,13 +15,13 @@ const image = [
 export default function Home() {
   return (
     <>
-      <main className="container">
+      <main className="custom-container">
         <h1 className="text-4xl text-center font-semibold px-5 mb-10">
           <span className="text-center w-full">Kyx</span> <br />
           Any brand and style shipped globally.
         </h1>
       </main>
-      <section className="grid md:grid-cols-2 gap-5">
+      <section className="grid lg:grid-cols-2 xl:grid-cols-3 gap-5 xl:gap-y-10 items-center">
         <ImageCard image={image[0]} brand="none" />
         <ImageCard image={image[1]} brand="none" />
         <ImageCard image={image[2]} brand="none" />
