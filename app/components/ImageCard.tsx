@@ -1,15 +1,19 @@
 import Image from "next/image";
+import { ImArrowUpRight2 } from "react-icons/im";
 
-type ImageCard = {
+type Props = {
   image: string;
   brand: string;
   altText?: string;
 };
 
-function ImageCard({ image, brand, altText = "" }: ImageCard) {
+function ImageCard({ image, brand, altText = "" }: Props) {
   return (
-    <div className="aspect-h-2 aspect-w-1 rounded-lg transition-all container relative">
-      <div className="masking"></div>
+    <div className="first-mask aspect-h-2 aspect-w-1">
+      <div className="second-mask" />
+      <button className="btn-up-right">
+        <ImArrowUpRight2 />
+      </button>
       <Image
         src={image}
         alt={altText}

@@ -44,17 +44,30 @@ body {
   @apply bg-white rounded-full transition-all;
 }
 
+.first-mask {
+  @apply rounded-lg transition-all container relative;
+}
+
 .image-card {
-  @apply object-fill object-center rounded-lg  max-h-80 cursor-pointer;
+  @apply object-fill object-center rounded-lg  max-h-80 cursor-pointer pointer-events-none;
 }
 
-.masking {
-  @apply w-full h-full bg-black absolute opacity-0 z-10;
+.second-mask {
+  @apply w-full h-full bg-black absolute opacity-0 z-10 rounded-lg cursor-pointer pointer-events-none;
 }
 
-.masking:hover + .image-card {
+.btn-up-right {
+  @apply absolute z-20 top-10 right-8 bg-slate-50 p-4 rounded-full transition-all duration-700 ease-in-out font-medium pointer-events-none opacity-0;
+}
+
+.first-mask:hover > .image-card {
   @apply blur-sm transition-all duration-500;
 }
-.masking:hover {
+
+.first-mask:hover > .second-mask {
   @apply opacity-50;
+}
+
+.first-mask:hover > .btn-up-right {
+  @apply top-2 right-3 opacity-100;
 }
