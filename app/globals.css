@@ -45,15 +45,15 @@ body {
 }
 
 .first-mask {
-  @apply rounded-lg transition-all container relative max-w-fit;
-}
-
-.image-card {
-  @apply object-fill object-center rounded-lg cursor-pointer pointer-events-none min-w-[31.25rem];
+  @apply rounded-lg transition-all container relative max-w-fit cursor-pointer;
 }
 
 .second-mask {
-  @apply w-full h-full bg-black absolute opacity-0 z-10 rounded-lg cursor-pointer pointer-events-none;
+  @apply w-full h-full bg-black absolute opacity-0 z-10 rounded-lg  pointer-events-none;
+}
+
+.image-card {
+  @apply object-fill object-center rounded-lg  pointer-events-none min-w-[31.25rem];
 }
 
 .first-mask,
@@ -65,14 +65,26 @@ body {
   @apply absolute z-20 top-10 right-8 bg-slate-50 p-4 rounded-full transition-all duration-700 ease-in-out font-medium pointer-events-none opacity-0;
 }
 
-.first-mask:hover > .image-card {
-  @apply blur-sm transition-all duration-500;
-}
-
 .first-mask:hover > .second-mask {
   @apply opacity-50;
 }
 
 .first-mask:hover > .btn-up-right {
   @apply top-2 right-3 opacity-100;
+}
+
+.second-mask,
+.btn-up-right {
+  visibility: hidden;
+}
+
+@media screen(lg) {
+  .second-mask,
+  .btn-up-right {
+    visibility: visible;
+  }
+
+  .first-mask:hover > .image-card {
+    @apply blur-sm transition-all duration-500;
+  }
 }

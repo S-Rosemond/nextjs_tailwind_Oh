@@ -1,7 +1,4 @@
-import { Inter } from "next/font/google";
 import ImageCard from "./components/ImageCard";
-
-const inter = Inter({ subsets: ["latin"] });
 
 const image = [
   "/taylor-smith-Nike-unsplash.jpg",
@@ -21,7 +18,7 @@ export default function Home() {
           Any brand and style shipped globally.
         </h1>
       </main>
-      <section className="grid lg:grid-cols-2 xl:grid-cols-3 gap-5 xl:gap-y-10 items-center">
+      <section className="grid lg:grid-cols-2 xl:grid-cols-3 gap-5 xl:gap-y-10 items-center justify-items-center">
         <ImageCard image={image[0]} brand="none" />
         <ImageCard image={image[1]} brand="none" />
         <ImageCard image={image[2]} brand="none" />
