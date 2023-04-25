@@ -56,13 +56,22 @@ body {
   @apply object-fill object-center rounded-lg  pointer-events-none min-w-[31.25rem];
 }
 
+.image-label {
+  @apply absolute sm:-bottom-6 sm:left-2 md:top-2 md:left-3 md:opacity-0 md:text-white transition-all duration-700;
+}
+
 .first-mask,
 .image-card {
   @apply max-h-80;
 }
 
 .btn-up-right {
-  @apply absolute z-20 top-10 right-8 bg-slate-50 p-4 rounded-full transition-all duration-700 ease-in-out font-medium pointer-events-none opacity-0;
+  @apply absolute  top-10 right-8 bg-slate-50 p-4 rounded-full transition-all duration-700 ease-in-out font-medium pointer-events-none opacity-0;
+}
+
+.image-label,
+.btn-up-right {
+  @apply z-20;
 }
 
 .first-mask:hover > .second-mask {
@@ -71,6 +80,10 @@ body {
 
 .first-mask:hover > .btn-up-right {
   @apply top-2 right-3 opacity-100;
+}
+
+.first-mask:hover > .image-label {
+  @apply opacity-100;
 }
 
 .second-mask,
