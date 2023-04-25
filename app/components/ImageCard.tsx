@@ -5,13 +5,17 @@ type Props = {
   image: string;
   brand: string;
   altText?: string;
+  idName: string;
 };
 
-function ImageCard({ image, brand, altText = "" }: Props) {
+function ImageCard({ image, brand, idName, altText = "" }: Props) {
   return (
     <div className="first-mask aspect-h-2 aspect-w-1">
       <div className="second-mask" />
-      <button className="btn-up-right">
+      <label className="image-label" htmlFor={idName}>
+        {brand}
+      </label>
+      <button id={idName} className="btn-up-right">
         <ImArrowUpRight2 />
       </button>
       <Image
