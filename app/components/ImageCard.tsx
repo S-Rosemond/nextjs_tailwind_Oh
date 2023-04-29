@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ImArrowUpRight2 } from "react-icons/im";
 
 type Props = {
@@ -8,16 +9,18 @@ type Props = {
   idName: string;
 };
 
+// relative w-full h-full
+//image: fill
+
 function ImageCard({ image, brand, idName, altText = "" }: Props) {
+  const url = process.env.NEXT_PUBLIC_URL + brand;
   return (
-    <div className="first-mask aspect-h-2 aspect-w-1">
+    <Link href={url} className="first-mask aspect-h-2 aspect-w-1">
       <div className="second-mask" />
-      <label className="image-label" htmlFor={idName}>
-        {brand}
-      </label>
-      <button id={idName} className="btn-up-right">
+      <article className="image-label">{brand}</article>
+      <div className="btn-up-right">
         <ImArrowUpRight2 />
-      </button>
+      </div>
       <Image
         src={image}
         alt={altText}
@@ -25,7 +28,7 @@ function ImageCard({ image, brand, idName, altText = "" }: Props) {
         width="640"
         className="image-card"
       />
-    </div>
+    </Link>
   );
 }
 
