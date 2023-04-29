@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { ImArrowUpRight2 } from "react-icons/im";
 
-type Props = {
-  image: string;
+export type ImageCardProp = {
+  image: string | StaticImageData;
   brand: string;
   altText?: string;
   idName: string;
@@ -12,7 +12,7 @@ type Props = {
 // relative w-full h-full
 //image: fill
 
-function ImageCard({ image, brand, idName, altText = "" }: Props) {
+function ImageCard({ image, brand, idName, altText = "" }: ImageCardProp) {
   const url = process.env.NEXT_PUBLIC_URL + brand;
   return (
     <Link href={url} className="first-mask aspect-h-2 aspect-w-1">
@@ -28,6 +28,7 @@ function ImageCard({ image, brand, idName, altText = "" }: Props) {
         width="640"
         className="image-card"
         placeholder="blur"
+        priority
       />
     </Link>
   );
