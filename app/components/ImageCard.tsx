@@ -27,6 +27,7 @@ function ImageCard({ image, brand, idName, altText = "" }: Props) {
         height="427"
         width="640"
         className="image-card"
+        placeholder="blur"
       />
     </Link>
   );
